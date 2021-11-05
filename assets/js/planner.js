@@ -3,22 +3,36 @@ var container = $(".container");
 var rows = 0;
 
 //// FUNCTIONS
+// to make the first row - testing to get function working properly
+row1 =
+  '<div id="timeCol" class="row col-1 border-start-0 border-secondary"></div> ' +
+  '<div id="taskCol" class="col-10"></div>' +
+  '<div id="saveCol" class="col-1"></div>';
 
-// create container to hold each task
-var createContainer = function (idContent, innerText) {
-  // function to create various columns
-  var col = container.append(idContent);
-  col.append(innerText);
-  container.appendChild(col);
+// create container to hold each row (time, task, save)
+var createContainer = function (idContent) {
+  $(".container").append(idContent);
 };
 
+// creates a row for each hour
+var createRow = createContainer(row1);
+//   timeBox = createContainer(
+//     '<div id="timeCol" class="row col-1 border-start-0 border-secondary"></div>'
+//   );
+//   taskBox = createContainer('<div id="taskCol" class="col-10"></div>');
+//   saveBox = createContainer('<div id="saveCol" class="col-1"></div>');
+// };
+createRow();
 // create 3 containers to hold
-createContainer(
-  '<div id="timeCol" class="col-1 border-start-0 border-secondary"></div>',
-  '<p>"time"</p>'
-);
-createContainer('<div id="taskCol" class="col-10"></div>', "task");
-createContainer('<div id="saveCol" class="col-1"></div>', "save");
+// createContainer(
+//   '<div id="timeCol" class="row col-1 border-start-0 border-secondary"></div>',
+//   '<p>"time"</p>'
+// );
+// console.lot("time container");
+// createContainer('<div id="taskCol" class="col-10"></div>', "task");
+// console.lot("task container");
+// createContainer('<div id="saveCol" class="col-1"></div>', "save");
+// console.lot("save container");
 
 // create function currentTime() that increases from 9am-5pm (9 rows)
 
