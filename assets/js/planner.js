@@ -1,38 +1,48 @@
 //// VARS
 var container = $(".container");
-var rows = 0;
+let row = 0;
 
 //// FUNCTIONS
 // to make the first row - testing to get function working properly
-row1 =
-  '<div id="timeCol" class="row col-1 border-start-0 border-secondary"></div> ' +
+var rowDefault = '<div id="row" class="row"></div>';
+var rowDefaultContent =
+  '<div id="timeCol" class="col bg-success border border-start-0 border-secondary"></div> ' +
   '<div id="taskCol" class="col-10"></div>' +
-  '<div id="saveCol" class="col-1"></div>';
+  '<div id="saveCol" class="col bg-info"></div>';
 
 // create container to hold each row (time, task, save)
-var createContainer = function (idContent) {
-  $(".container").append(idContent);
+var createRow = function (rowNum) {
+  container.append(rowNum);
+  console.log("start function createContainer");
 };
 
-// creates a row for each hour
-var createRow = createContainer(row1);
-//   timeBox = createContainer(
-//     '<div id="timeCol" class="row col-1 border-start-0 border-secondary"></div>'
-//   );
-//   taskBox = createContainer('<div id="taskCol" class="col-10"></div>');
-//   saveBox = createContainer('<div id="saveCol" class="col-1"></div>');
-// };
-createRow();
-// create 3 containers to hold
-// createContainer(
-//   '<div id="timeCol" class="row col-1 border-start-0 border-secondary"></div>',
-//   '<p>"time"</p>'
-// );
-// console.lot("time container");
-// createContainer('<div id="taskCol" class="col-10"></div>', "task");
-// console.lot("task container");
-// createContainer('<div id="saveCol" class="col-1"></div>', "save");
-// console.lot("save container");
+var createRowContent = function (rowContent) {
+  $("#row").append(rowContent);
+  console.log("appends 3 containers to each row");
+};
+
+// change element's id to reflect their place
+var changeId = function (id, index) {
+  $(id).attr("id", id + index);
+};
+
+// function to create 9 rows
+var createTimeRow = function () {
+  while (row < 9) {
+    row++;
+    createRow(rowDefault);
+    createRowContent(rowDefaultContent);
+    // make row id reflect place on list
+    changeId("#row", row);
+    // add a time 9am-5pm to each timeCol
+    for (var num = 9; num <= 13; num++) {
+      $("#row" + row);
+      $("#timeCol").append("<p>" + (row + 8) + "AM</p>");
+    }
+  }
+};
+
+createTimeRow();
 
 // create function currentTime() that increases from 9am-5pm (9 rows)
 
