@@ -6,9 +6,9 @@ let row = 0;
 // to make the first row - testing to get function working properly
 var rowDefault = '<div id="row" class="row"></div>';
 var rowDefaultContent =
-  '<div id="timeCol" class="col bg-success border border-start-0 border-secondary"></div> ' +
-  '<div id="taskCol" class="col-10"></div>' +
-  '<div id="saveCol" class="col bg-info"></div>';
+  '<div id="timeCol" class="col border border-2 border-secondary border-start-0"></div> ' +
+  '<div id="taskCol" class="col-10 bg-secondary border border-light bg-opacity-25"></div>' +
+  '<div id="saveCol" class="col bg-info border border-light rounded-end rounded-3"></div>';
 
 // create container to hold each row (time, task, save)
 var createRow = function (rowNum) {
