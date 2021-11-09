@@ -29,6 +29,44 @@ var appendTime = function (index) {
   $("#timeCol" + index).append("<p>" + [index + 8] + ":00</p>");
 };
 
+// change color of row based on time
+var updateBlockColor = function (index) {
+  $("#row" + index).each(function () {
+    //get an ID for current time block
+    var getTime = moment(
+      $("#timeCol" + index)
+        .text()
+        .trim(),
+      "H"
+    );
+    //get current hour using moment()
+    var currentHour = moment();
+    // debugger;
+    var duration = parseInt(
+      Math.ceil(moment.duration(getTime.diff(currentHour)).asHours())
+    );
+    //write IF condition to compare time block and moment() hour and assign class accordingly
+    if (duration < 0) {
+      // remove old class
+      $("#row" + index)
+        .children("#taskText")
+        .removeClass("future");
+      $("#row" + index)
+        .children("#taskText")
+        .addClass("past");
+    }
+    if (duration === 0) {
+      // task area red
+      $("#row" + index)
+        .children("#taskText")
+        .removeClass("future");
+      $("#row" + index)
+        .children("#taskText")
+        .addClass("present");
+    }
+  });
+};
+
 // function to create 9 rows
 var createTimeRow = function () {
   while (row < 9) {
@@ -41,29 +79,6 @@ var createTimeRow = function () {
     getTask(row);
     updateBlockColor(row);
   }
-};
-
-// change color of row based on time
-var updateBlockColor = function (index) {
-  // get's current time
-  var getTime = $("#row1" + [index + 8])
-    .find(".timeCol")
-    .text()
-    .trim();
-  console.log(getTime);
-
-  // moment($(this), "H HH").text().trim();
-  // var duration = Math.ceil(moment.duration(hours.diff(moment())).asHours());
-
-  //   // get row + 8 and compare to current time from moment()
-  //   if (){
-  //     // task area grey
-  //     append(".past");
-  //   }
-  //   if else {
-  //     // task area red
-  //     append(".present")
-  //   }
 };
 
 // save task to localStorage
@@ -84,20 +99,3 @@ function getTask(row) {
 // START PLANNER
 createTimeRow();
 $(document).on("click", saveTask);
-
-// create function currentTime() that increases from 9am-5pm (9 rows)
-
-// create containers with 9 rows
-//// each row has 3 columns
-//// one column for time (9am - 5pm)
-//// one column for task
-////// this column must be editable so when clicked user can input more text into field
-////// then click 'enter' or save to save task
-//// one column to save
-
-// each colum must have a color
-// time must be connected to moment.js
-// refresh must happen every 30 minutes (1800000 ms)
-//// if past grey
-//// if current red
-//// if future green
