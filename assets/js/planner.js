@@ -5,9 +5,9 @@ let row = 0;
 
 var defaultRow =
   '<div id="row" class="row">' +
-  '<div id="timeCol" class="col border border-2 border-secondary border-start-0 hour"></div>' +
-  '<textarea id="taskText" class="col-10 bg-secondary border border-light bg-opacity-25 description"></textarea>' +
-  '<button id="saveButton" class="col bg-info border border-light rounded-end rounded-3 far fa-save"></button>' +
+  '<div id="timeCol" class="col border border-2 border-secondary border-start-0 hour time-block"></div>' +
+  '<textarea id="taskText" class="col-10 future border border-light description"></textarea>' +
+  '<button id="saveButton" class="col bg-info border border-light rounded-end rounded-3 far fa-save saveBtn"></button>' +
   "</div>";
 
 var now = moment().format("dddd, MM.D.YYYY - hh:mm:ss a");
@@ -43,8 +43,20 @@ var createTimeRow = function () {
 };
 
 // change color of row based on time
-// var pastEvent = function() {
-//   if
+// var updateBlockColor = function() {
+
+//   var time = moment($(this).text().trim(), 'LT');
+//   var duration = Math.ceil(moment.duration(hours.diff(moment())).asHours());
+
+//   // get row + 8 and compare to current time from moment()
+//   if (){
+//     // task area grey
+//     append(".past");
+//   }
+//   if else {
+//     // task area red
+//     append(".present")
+//   }
 // };
 
 // save task to localStorage
