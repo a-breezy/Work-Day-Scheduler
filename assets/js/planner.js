@@ -39,25 +39,32 @@ var createTimeRow = function () {
     // at time within timeCol to reflect hours 9-5pm
     appendTime(row);
     getTask(row);
+    updateBlockColor(row);
   }
 };
 
 // change color of row based on time
-// var updateBlockColor = function() {
+var updateBlockColor = function (index) {
+  // get's current time
+  var getTime = $("#row1" + [index + 8])
+    .find(".timeCol")
+    .text()
+    .trim();
+  console.log(getTime);
 
-//   var time = moment($(this).text().trim(), 'LT');
-//   var duration = Math.ceil(moment.duration(hours.diff(moment())).asHours());
+  // moment($(this), "H HH").text().trim();
+  // var duration = Math.ceil(moment.duration(hours.diff(moment())).asHours());
 
-//   // get row + 8 and compare to current time from moment()
-//   if (){
-//     // task area grey
-//     append(".past");
-//   }
-//   if else {
-//     // task area red
-//     append(".present")
-//   }
-// };
+  //   // get row + 8 and compare to current time from moment()
+  //   if (){
+  //     // task area grey
+  //     append(".past");
+  //   }
+  //   if else {
+  //     // task area red
+  //     append(".present")
+  //   }
+};
 
 // save task to localStorage
 function saveTask(event) {
@@ -69,7 +76,6 @@ function saveTask(event) {
 function getTask(row) {
   var key = "row" + row;
   var description = localStorage.getItem(key);
-  console.log(description);
   $("#row" + row)
     .children(".description")
     .text(description);
