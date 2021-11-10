@@ -10,7 +10,7 @@ This is a simple daily work planner using third party apis - bootstrap, fontAwes
 - [Usages](#usages)
 - [Acceptance Criteria](#acceptance-criteria)
 - [Contribution](#contribution)
-- [Resources](#resources-(apis))
+- [Resources](#resources)
 
 ## Links
 
@@ -21,7 +21,7 @@ This is a simple daily work planner using third party apis - bootstrap, fontAwes
 
 ![Work Day Scheduler](./assets/images/work-day-scheduler.png)
 
-## Resources (APIs)
+## Resources
 
 - [Bootstrap](https://getbootstrap.com/)
 - [fontAwesome](https://fontawesome.com/)
