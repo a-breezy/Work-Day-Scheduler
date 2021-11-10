@@ -13,8 +13,8 @@ This is a simple daily work planner using third party apis - bootstrap, fontAwes
 
 ## Links
 
-[Live page](https://a-breezy.github.io/Work-Day-Scheduler/)
-[GitHub Repo](https://github.com/a-breezy/Work-Day-Scheduler)
+- [Live page](https://a-breezy.github.io/Work-Day-Scheduler/)
+- [GitHub Repo](https://github.com/a-breezy/Work-Day-Scheduler)
 
 ## Usages
 
