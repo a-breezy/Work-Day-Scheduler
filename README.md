@@ -2,7 +2,7 @@
 
 ## Description
 
-This is a simple daily work planner using third party apis - bootstrap, jQuery, Moment, fontAwesome and Google Fonts to help with functionality. This daily planner will allow the user to set events, which are saved to localStorage, and task columns to change color based on the time of day. If the event has past, the column will be grey; if current, the column will be red; if in the future, the column will be green.
+This is a simple daily work planner using third party apis - bootstrap, fontAwesome, Google Fonts, jQuery, and Moment to help with functionality. This daily planner will allow the user to set events, which are saved to localStorage, and task columns to change color based on the time of day. If the event has past, the column will be grey; if current, the column will be red; if in the future, the column will be green.
 
 ## Table of Contents
 
@@ -19,6 +19,14 @@ This is a simple daily work planner using third party apis - bootstrap, jQuery, 
 ## Usages
 
 ![Work Day Scheduler](./assets/images/work-day-scheduler.png)
+
+## Resources (APIs)
+
+- [Bootstrap](https://getbootstrap.com/)
+- [fontAwesome](https://fontawesome.com/)
+- [Google Fonts](https://fonts.google.com/)
+- [jQuery](https://jquery.com/)
+- [Moment](https://momentjs.com/docs/)
 
 ## Acceptance Criteria
 
