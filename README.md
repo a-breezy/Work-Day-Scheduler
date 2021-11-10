@@ -10,6 +10,7 @@ This is a simple daily work planner using third party apis - bootstrap, fontAwes
 - [Usages](#usages)
 - [Acceptance Criteria](#acceptance-criteria)
 - [Contribution](#contribution)
+- [Resources](#resources-(apis))
 
 ## Links
 
